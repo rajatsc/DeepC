@@ -59,7 +59,9 @@ It does the exact opposite of ```im2col``` restoring the image structure.
 
 #### 4.2.3 forwad_convolutional_layer
 
-The output of im2col passes through this method 
+The output of im2col is multiplied by the filter matrix, where each filter is a seperate row in the matrix in row-major order. The output matrix is then passed through ```activate_matrix``` function.
+
+![im2col example](images/forward_convolution.png)
 
 #### 4.2.4 backward_convolutional_layer
 
