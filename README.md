@@ -75,7 +75,7 @@ The method finds the maximum value in a given window size, moving by some stride
 
 #### 4.3.2 backward_maxpool_layer
 
-The backward method will be similar to forward. Even though the window size may be large, only one element contributed to the error in the prediction so we only backpropagate our deltas to a single element in the input per window. Thus, you'll iterate through again and find the maximum value and then backpropagate error to the appropriate element in ```dL/din``` corresponding to the position of the maximum element.
+The backward method is similar to forward. Even though the window size may be large, only one element contributed to the error in the prediction so we only backpropagate our deltas to a single element in the input per window. Thus, you'll iterate through again and find the maximum value and then backpropagate error to the appropriate element in ```dL/din``` corresponding to the position of the maximum element.
 
 ## 4. net
 
