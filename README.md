@@ -52,6 +52,8 @@ The function updates our weights using SGD with momentum and weight decay.
 It take spatial blocks of image and put them into columns of a matrix. ```Im2col``` handles kernel size, stride,
 padding, etc.
 
+![im2col example](images/im2col.gif)
+
 ### 4.2.2 col2im
 
 #### 4.2.3 forwad_convolutional_layer
