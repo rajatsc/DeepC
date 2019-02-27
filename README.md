@@ -28,23 +28,33 @@ The ```layer``` struct contains the input and output of a layer. It also stores 
 
 ### 4.1 connected_layer 
 
-It is a fully connected layer defined in ```connected_layer.c```. It has three functions ```forward_connected_layer```, ```backward_connected_layer``` and ```update_connected_layer``.
+It is a fully connected layer defined in ```connected_layer.c```. It has three functions ```forward_connected_layer```, ```backward_connected_layer``` and ```update_connected_layer```.
 
 #### 4.1.1 forwad_connected_layer
 
-The layer outputs a matrix ```f(in*w + b)``` where: ```in``` is the input, ```w``` is the weights, ```b``` is the bias, and ```f``` is the activation function.
+The function outputs a matrix ```f(in*w + b)``` where: ```in``` is the input, ```w``` is the weights, ```b``` is the bias, and ```f``` is the activation function.
 
 #### 4.1.2 backward_connected_layer
 
+The function takes ```dL/df(in*w+b)``` (derivative of loss wrt output) as the argument and returns ```dL/dw``` (derivative of loss wrt layer weights), ```dL/db```(derivative of loss wrt biases) and ```dL/din``` (derivative of loss wrt to input).
+
 #### 4.1.3 update_connected_layer
+
+The function updates our weights using SGD with momentum and weight decay.
 
 ### 4.2 convolutional_layer
 
-#### 4.2.1 forwad_convolutional_layer
+### 4.2.1 im2col
 
-#### 4.2.2 backward_convolutional_layer
 
-#### 4.2.3 update_convolutional_layer
+
+### 4.2.2 col2im
+
+#### 4.2.3 forwad_convolutional_layer
+
+#### 4.2.4 backward_convolutional_layer
+
+#### 4.2.5 update_convolutional_layer
 
 ### 4.3 maxpool_layer
 
