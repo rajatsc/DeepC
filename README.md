@@ -48,6 +48,12 @@ The ```layer``` struct contains the input and input to a layer. It also stores t
 
 ### 4.3 update_net
 
+## 5. classifier
+
+```classifier``` is a wrapper around ```net.c```.
+
 The ```net``` struct is an array of layers. It also stores a variale which is equal to the depth of the net
+
+## Compile and Run
 
 Run ```make``` to compile your source file and to make sure your executables and libraries are up to date. Then either run ```python trymnist.py``` or  ```python trycifar.py``` to train the  neural network on MNIST and CIFAR-10 data respectivey. All data resides in individual subfolders in the ```./data/``` folder.
