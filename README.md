@@ -41,7 +41,7 @@ loss wrt layer weights), ```dL/db```(derivative of loss wrt biases) and ```dL/di
 
 #### 4.1.3 update_connected_layer
 
-The function updates our weights using SGD with momentum and weight decay.
+The function updates our weights and biases using SGD with momentum and weight decay.
 
 ### 4.2 convolutional_layer
 
@@ -65,7 +65,11 @@ The output of im2col is multiplied by the filter matrix, where each filter is a 
 
 #### 4.2.4 backward_convolutional_layer
 
+
+
 #### 4.2.5 update_convolutional_layer
+
+The function updates our weights (kernel values) and biases using SGD with momentum and weight decay.
 
 ### 4.3 maxpool_layer
 
