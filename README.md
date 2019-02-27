@@ -36,7 +36,8 @@ The function outputs a matrix ```f(in*w + b)``` where: ```in``` is the input, ``
 
 #### 4.1.2 backward_connected_layer
 
-The function takes ```dL/df(in*w+b)``` (derivative of loss wrt output) as the argument and returns ```dL/dw``` (derivative of loss wrt layer weights), ```dL/db```(derivative of loss wrt biases) and ```dL/din``` (derivative of loss wrt to input).
+The function takes ```dL/df(in*w+b)``` (derivative of loss wrt output) as the argument and returns ```dL/dw``` (derivative of 
+loss wrt layer weights), ```dL/db```(derivative of loss wrt biases) and ```dL/din``` (derivative of loss wrt to input).
 
 #### 4.1.3 update_connected_layer
 
@@ -44,9 +45,12 @@ The function updates our weights using SGD with momentum and weight decay.
 
 ### 4.2 convolutional_layer
 
-### 4.2.1 im2col
+```convolutional_layer.c``` defines the convolutional layer. It contains the following major functions: ```im2col```, ```col2im```, ```forward_convolutional_layer```, ```backward_convolutional_layer``` and ```update_convolutional_layer```
 
+#### 4.2.1 im2col
 
+It take spatial blocks of image and put them into columns of a matrix. ```Im2col``` handles kernel size, stride,
+padding, etc.
 
 ### 4.2.2 col2im
 
