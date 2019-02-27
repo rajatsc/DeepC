@@ -54,9 +54,11 @@ padding, etc.
 
 ![im2col example](images/im2col.gif)
 
-### 4.2.2 col2im
+#### 4.2.2 col2im
 
 #### 4.2.3 forwad_convolutional_layer
+
+Once the image is processed through ```Im2col```. The forward 
 
 #### 4.2.4 backward_convolutional_layer
 
@@ -64,7 +66,11 @@ padding, etc.
 
 ### 4.3 maxpool_layer
 
+Maxpooling is another core building block of convolutional neural networks. Implementing ```maxpool_layer``` will be similar to implementing ```convolution_layer``` in some ways, we have to iterate over the image, process a window of pixels with some fixed size, and then find the maximum value to put into the output. It is defined in```maxpool_layer.c```.
+
 #### 4.3.1 forwad_maxpool_layer
+
+The method finds the maximum value in a given window size, moving by some strided amount between applications. maxpooling happens on each channel independently.
 
 #### 4.3.2 backward_maxpool_layer
 
