@@ -1,6 +1,6 @@
 # DeepC
 
-**DeepC** is a lightweight neural network framework written in C developed as part of [Introduction to Deep Learning (CSE 599g1)](https://courses.cs.washington.edu/courses/cse599g1/18au/) course in Fall 2018.
+**DeepC** is a lightweight neural network library written in C developed as part of [Introduction to Deep Learning (CSE 599g1)](https://courses.cs.washington.edu/courses/cse599g1/18au/) course in Fall 2018. The ```./src/``` subfolder contains the header and source files. ```uwnet.py``` is a wrapper function which provides a pure Python interface to our C library. ```trycifar.py``` and ```trymnist.py``` are python scripts where we load the data, define our network and run the training and testing functions.
 
 ## 1. matrix
 
@@ -15,7 +15,12 @@
 
 The ```layer``` struct contains the input and input to a layer. It also stores the weights and biases 
 
-### 3.1 connected_layer
+### 3.1 connected_layer 
+
+Our layer outputs a matrix called out as ```f(in*w + b)``` where: ```in``` is the input, ```w``` is the weights, ```b``` is the bias, and ```f``` is the activation function. ```activate_matrix``` and ```gradient_matrix``` functions are defined in ```activations.c``` file 
+
+
+Finally, we'll want to activate the output with the activation function for that layer.
 
 #### 3.1.1 forwad_connected_layer
 
