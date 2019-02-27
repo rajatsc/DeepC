@@ -24,7 +24,7 @@ Given the output of a layer i.e ```f(m)``` and the activation function ```a``` t
 
 ## 4. layer
 
-The ```layer``` struct contains the input and output of a layer. It also stores the weights and biases. It  
+The ```layer``` struct contains the input and output of a layer. It also stores the weights and biases and has function pointers for forward propagation, backpropagation and for updating the weights and biases.
 
 ### 4.1 connected_layer 
 
@@ -49,16 +49,17 @@ The function updates our weights using SGD with momentum and weight decay.
 
 #### 4.2.1 im2col
 
-It take spatial blocks of image and put them into columns of a matrix. ```Im2col``` handles kernel size, stride,
-padding, etc.
+It take spatial blocks of image and put them into columns of a matrix. ```Im2col``` handles kernel size, stride, padding, etc.
 
 ![im2col example](images/im2col.gif)
 
 #### 4.2.2 col2im
 
+It does the exact opposite of ```im2col``` restoring the image structure.
+
 #### 4.2.3 forwad_convolutional_layer
 
-Once the image is processed through ```Im2col```. The forward 
+The output of im2col passes through this method 
 
 #### 4.2.4 backward_convolutional_layer
 
@@ -66,7 +67,7 @@ Once the image is processed through ```Im2col```. The forward
 
 ### 4.3 maxpool_layer
 
-Maxpooling is another core building block of convolutional neural networks. Implementing ```maxpool_layer``` will be similar to implementing ```convolution_layer``` in some ways, we have to iterate over the image, process a window of pixels with some fixed size, and then find the maximum value to put into the output. It is defined in```maxpool_layer.c```.
+Maxpooling is another core building block of convolutional neural network architecture. Implementing ```maxpool_layer``` will be similar to implementing ```convolution_layer``` in some ways, we have to iterate over the image, process a window of pixels with some fixed size, and then find the maximum value to put into the output. It is defined in```maxpool_layer.c```.
 
 #### 4.3.1 forwad_maxpool_layer
 
@@ -74,22 +75,28 @@ The method finds the maximum value in a given window size, moving by some stride
 
 #### 4.3.2 backward_maxpool_layer
 
-#### 4.3.3 update_maxpool_layer
-
+The backward method will be similar to forward. Even though the window size may be large, only one element contributed to the error in the prediction so we only backpropagate our deltas to a single element in the input per window. Thus, you'll iterate through again and find the maximum value and then backpropagate error to the appropriate element in ```dL/din``` corresponding to the position of the maximum element.
 
 ## 4. net
 
+The ```net``` struct is an array of layers.
+
 ### 4.1 forward_net
+
+This function runs forward propagation function for each layer in order they are stacked.
 
 ### 4.2 backward_net
 
+It backpropagates the derivative of loss through each layer by calling the backpropagation function of each layer.
+
 ### 4.3 update_net
+
+This function updates the weights and biases of all the layers in the network.
 
 ## 5. classifier
 
 ```classifier``` is a wrapper around ```net.c```.
 
-The ```net``` struct is an array of layers. It also stores a variale which is equal to the depth of the net
 
 ## Compile and Run
 
