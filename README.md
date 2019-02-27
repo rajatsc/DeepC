@@ -14,11 +14,11 @@
 
 ```activations.c``` defines ```activate_matrix``` and ```gradient_matrix``` for different activation function. Right now, it supports Logistic, RELU, LRELU and Softmax activation function.
 
-###3.1 ```activate_matrix```
+### 3.1 ```activate_matrix```
 
 It takes a matrix ```m``` and an activation function ```a```  which is a constant string and returns ```f(m)```, where ```f``` is defined by what the activation ```a``` is. ```f``` is applied elementwise to ```m```.
 
-###3.2 ```gradient_matrix```
+### 3.2 ```gradient_matrix```
 
 Given the output of a layer i.e ```f(m)``` and the activation function ```a``` that defines ```f```, it returns ```f'(m)```.
 
