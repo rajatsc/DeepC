@@ -97,7 +97,7 @@ This function updates the weights and biases of all the layers in the network.
 
 ## 5. classifier
 
-```classifier``` is a wrapper around ```net.c```.
+```classifier``` has ```train_image_classifier``` function that calls ```forward_net```, ```backward_net``` and ```update_net``` in that order for specified number of iterations. It also has functions to calculate cross entropy loss and accuracy of the network.
 
 
 ## Compile and Run
