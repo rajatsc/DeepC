@@ -10,7 +10,7 @@
 
 ```data``` struct is declared and defined in ```uwnet.h```. It contains the input matrix **X** and the output matrix **y** on which the neural network is trained.
 
-## 3. Activation functions
+## 3. activation functions
 
 ```activations.c``` defines ```activate_matrix``` and ```gradient_matrix``` for different activation function. Right now, it supports Logistic, RELU, LRELU and Softmax activation function.
 
@@ -22,20 +22,17 @@ It takes a matrix ```m``` and an activation function ```a```  which is a constan
 
 Given the output of a layer i.e ```f(m)``` and the activation function ```a``` that defines ```f```, it returns ```f'(m)```.
 
-
-
 ## 4. layer
 
-The ```layer``` struct contains the input and input to a layer. It also stores the weights and biases 
+The ```layer``` struct contains the input and output of a layer. It also stores the weights and biases. It  
 
 ### 4.1 connected_layer 
 
-The layer outputs a matrix ```f(in*w + b)``` where: ```in``` is the input, ```w``` is the weights, ```b``` is the bias, and ```f``` is the activation function. ```activate_matrix``` and ```gradient_matrix``` functions are defined in ```activations.c``` file 
-
-
-Finally, we'll want to activate the output with the activation function for that layer.
+It is a fully connected layer defined in ```connected_layer.c```. It has three functions ```forward_connected_layer```, ```backward_connected_layer``` and ```update_connected_layer``.
 
 #### 4.1.1 forwad_connected_layer
+
+The layer outputs a matrix ```f(in*w + b)``` where: ```in``` is the input, ```w``` is the weights, ```b``` is the bias, and ```f``` is the activation function.
 
 #### 4.1.2 backward_connected_layer
 
