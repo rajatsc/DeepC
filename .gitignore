@@ -20,7 +20,9 @@ Thumbs.db
 __pycache__/
 cifar/
 mnist/
-data/
+data/cifar/
+data/mnist/
+data/william_shakespeare.txt
 figs/
 pdf/
 results/
