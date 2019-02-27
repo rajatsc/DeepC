@@ -40,9 +40,13 @@ The ```layer``` struct contains the input and input to a layer. It also stores t
 #### 3.3.3 update_maxpool_layer
 
 
-### 
-
 ## 4. net
+
+### 4.1 forward_net
+
+### 4.2 backward_net
+
+### 4.3 update_net
 
 The ```net``` struct is an array of layers. It also stores a variale which is equal to the depth of the net
 
