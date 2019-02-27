@@ -8,7 +8,7 @@
 
 ## 2. data
 
-```data``` struct is declared and defined in ```uwnet.h```. It contains the input matrix **X** and the output matrix **y** on which the neural network is trained.
+```data``` struct is declared and defined in ```uwnet.h```. It contains the input matrix **``X``** and the output matrix **``y``** on which the neural network is trained.
 
 ## 3. activation functions
 
@@ -65,7 +65,7 @@ The output of im2col is multiplied by the filter matrix, where each filter is a 
 
 #### 4.2.4 backward_convolutional_layer
 
-
+Similar to ```backward_connected_layer```, it calculates the derivative of loss wrt to weights, biases and the inputs.
 
 #### 4.2.5 update_convolutional_layer
 
