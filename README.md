@@ -23,6 +23,21 @@ The ```layer``` struct contains the input and input to a layer. It also stores t
 
 #### 3.1.3 update_connected_layer
 
+### 3.2 convolutional_layer
+
+#### 3.2.1 forwad_convolutional_layer
+
+#### 3.2.2 backward_convolutional_layer
+
+#### 3.2.3 update_convolutional_layer
+
+### 3.3 maxpool_layer
+
+#### 3.3.1 forwad_maxpool_layer
+
+#### 3.3.2 backward_maxpool_layer
+
+#### 3.3.3 update_maxpool_layer
 
 
 ### 
